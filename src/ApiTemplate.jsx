@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./tailwind.css";
 
-const API_KEY = "AIzaSyDzZCGfS8aQ4tlM4TK1efVmh7M9FXKJUGg";
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export default function App() {
   const [query, setQuery] = useState("");

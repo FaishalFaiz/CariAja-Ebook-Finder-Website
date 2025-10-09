@@ -1,8 +1,6 @@
 import React from "react";
 import "./tailwind.css";
 
-const API_KEY = "AIzaSyDzZCGfS8aQ4tlM4TK1efVmh7M9FXKJUGg";
-
 export default function App() {
 
   return (
