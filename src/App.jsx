@@ -1,13 +1,12 @@
 import React from "react";
 import "./tailwind.css";
+import Navbar from "./component/Navbar.jsx";
 
 export default function App() {
 
   return (
     <>
-      <nav className="w-full p-4 bg-white border-b border-gray-200 flex items-center justify-between">
-        <h1>Cari Aja</h1>
-      </nav>
+      <Navbar />
     </>
   );
 }

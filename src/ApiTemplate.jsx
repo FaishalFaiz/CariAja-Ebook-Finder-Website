@@ -4,7 +4,7 @@ import "./tailwind.css";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
-export default function App() {
+export default function AppAPI() {
   const [query, setQuery] = useState("");
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
