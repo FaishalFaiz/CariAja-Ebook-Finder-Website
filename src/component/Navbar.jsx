@@ -6,11 +6,11 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="flex items-center justify-center px-6 py-6 bg-dark text-white shadow-md">
+        <nav className="z-50 flex items-center justify-center px-6 py-6 md:py-10 bg-dark text-white sticky top-0">
             <div className="flex flex-row justify-between gap-4 items-center w-[90vw] md:w-[70vw]">
-                <div className="flex items-center gap-2 hidden md:block">
-                    <img src={logo} alt="Logo" className="w-[clamp(100px,8vw,140px)]" />
-                </div>
+
+                <img src={logo} alt="Logo" className="w-[clamp(120px,8vw,140px)] hidden md:block" />
+
 
                 <div className="flex items-center bg-white rounded-full overflow-hidden w-full md:max-w-xl">
                     <Search className="text-gray-400 ml-3" size={18} />
@@ -22,14 +22,15 @@ const Navbar = () => {
                 </div>
 
                 <button
-                    className="md:hidden"
+                    className="lg:hidden"
                     onClick={() => setIsOpen(!isOpen)}
                     aria-label="Toggle menu"
                 >
                     {isOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
+
                 <ul
-                    className={`absolute left-0 top-[85px] py-3 md:py-0 w-full bg-dark text-center md:static md:flex md:w-auto md:space-x-6 transition-all duration-300 ${isOpen ? "block" : "hidden md:block"
+                    className={`absolute left-0 top-[85px] py-3 lg:py-0 w-full bg-dark text-center lg:static lg:flex lg:w-auto lg:space-x-6 transition-all duration-300 ${isOpen ? "block" : "hidden lg:block"
                         }`}
                 >
                     <li>
