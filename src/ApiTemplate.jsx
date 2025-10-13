@@ -25,6 +25,7 @@ export default function AppAPI() {
       const res = await axios.get(url);
       const data = res.data;
 
+
       if (data.items) setBooks(data.items);
       else setError("Buku tidak ditemukan.");
     } catch (err) {
@@ -34,6 +35,8 @@ export default function AppAPI() {
       setLoading(false);
     }
   }
+
+  console.log(books);
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 p-6">
