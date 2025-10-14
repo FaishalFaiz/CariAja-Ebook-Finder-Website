@@ -37,8 +37,11 @@
 
 body {
     @apply bg-white;
-    /* ganti sesuai warna dasar kamu */
 
+}
+
+.clickable {
+    @apply transition cursor-pointer active:scale-105 hover:scale-105 ;
 }
 
 .section-title {
@@ -46,7 +49,7 @@ body {
 }
 
 .section-sub {
-    @apply text-[0.8rem] md:text-[1rem] text-secondary cursor-pointer font-medium;
+    @apply text-[0.8rem] md:text-[1rem] active:scale-103 hover:underline text-secondary cursor-pointer font-medium;
 }
 
 .category-card {

@@ -1,15 +1,15 @@
 import React from "react";
 
-export default function Card({ title, author, img, lazy }) {
+export default function Card({ title, author, img, lazy, bookId }) {
     // Gunakan proxy images.weserv.nl agar gambar bisa tampil
     const proxyImage = `https://images.weserv.nl/?url=${encodeURIComponent(
         img.replace("http://", "https://")
     )}`;
 
     return (
-        <div className="flex flex-col items-start w-[45%] sm:w-[30%] md:w-[220px]">
+        <div className="flex flex-col items-start w-[45%] sm:w-[30%] clickable md:w-[220px]" id={bookId}>
             {/* Container gambar dengan aspect ratio */}
-            <div className="w-full aspect-[2/3] overflow-hidden rounded-xl shadow-sm hover:shadow-md transition">
+            <div className="w-full aspect-[2/3] overflow-hidden shadow-lg  rounded-xl">
                 <img
                     src={proxyImage}
                     alt={title}
