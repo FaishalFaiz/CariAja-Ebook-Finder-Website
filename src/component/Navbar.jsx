@@ -8,14 +8,14 @@ export default function Navbar() {
 
     return (
         <nav className="z-50 flex items-center justify-center px-6 py-6 md:py-10 bg-dark text-white sticky top-0">
-            <div className="flex flex-row justify-between gap-4 items-center w-[90vw] md:w-[70vw]">
+            <div className="flex justify-between gap-4 items-center w-[90vw] md:w-[70vw]">
 
                 {/* Logo */}
-                <Link to="/">
+                <Link to="/" className="w-[clamp(120px,8vw,140px)] clickable hidden md:block">
                     <img
+                        className="w-full"
                         src={logo}
                         alt="Logo"
-                        className="w-[clamp(120px,8vw,140px)] clickable hidden md:block"
                     />
                 </Link>
 
