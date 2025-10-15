@@ -28,7 +28,7 @@
               <Route path="/about" element={<About />} />
               <Route path="/library" element={<Library />} />
               <Route path="/bookmark" element={<Bookmark />} />
-              <Route path="/bookdetail" element={<BookDetail />} />
+              <Route path="/bookdetail/:id" element={<BookDetail />} />
               <Route path="/api" element={<AppAPI />} />
             </Routes>
           </div>

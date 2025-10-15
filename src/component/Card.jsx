@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Card({ title, author, img, lazy, bookId }) {
     // Gunakan proxy images.weserv.nl agar gambar bisa tampil
@@ -9,14 +10,14 @@ export default function Card({ title, author, img, lazy, bookId }) {
     return (
         <div className="flex flex-col items-start w-[45%] sm:w-[30%] clickable md:w-[220px]" id={bookId}>
             {/* Container gambar dengan aspect ratio */}
-            <div className="w-full aspect-[2/3] overflow-hidden shadow-lg  rounded-xl">
+            <Link to={`/bookdetail/${bookId}`} className="w-full aspect-[2/3] overflow-hidden shadow-lg  rounded-xl">
                 <img
                     src={proxyImage}
                     alt={title}
                     className="w-full h-full object-cover"
                     loading={lazy ? "lazy" : "eager"}
                 />
-            </div>
+            </Link>
 
             <h4 className="text-md md:text-2xl max-w-[128px] md:max-w-none mt-3 font-medium text-black line-clamp-2">
                 {title}
