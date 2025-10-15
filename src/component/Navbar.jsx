@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.svg";
-import { Menu, X, Bookmark, Search } from "lucide-react"; // ikon modern (pastikan lucide-react sudah terinstal)
+import logo from "@/assets/logo.svg";
+import { Menu, X, Bookmark, Search } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -10,12 +11,13 @@ export default function Navbar() {
             <div className="flex flex-row justify-between gap-4 items-center w-[90vw] md:w-[70vw]">
 
                 {/* Logo */}
-                <img
-                    src={logo}
-                    alt="Logo"
-                    className="w-[clamp(120px,8vw,140px)] clickable hidden md:block"
-                    onClick={() => (window.location.href = "/")} // klik untuk balik ke homepage
-                />
+                <Link to="/">
+                    <img
+                        src={logo}
+                        alt="Logo"
+                        className="w-[clamp(120px,8vw,140px)] clickable hidden md:block"
+                    />
+                </Link>
 
                 {/* Search Bar */}
                 <div className="flex items-center bg-white rounded-full overflow-hidden w-full md:max-w-xl">
@@ -42,30 +44,23 @@ export default function Navbar() {
                         }`}
                 >
                     <li className="clickable">
-                        <a href="#" className="block px-4 py-2">
-                            Library
-                        </a>
+                        <Link to="/library" href="#" className="block px-4 py-2">Library</Link>
                     </li>
-
                     <li className="clickable">
-                        <a
-                            href="#"
-                            className="flex items-center justify-center gap-2 px-4 py-2"
-                        >
-                            <Bookmark size={16} />
-                            <span>Bookmark</span>
-                        </a>
+                        <Link to="/bookmark" className="flex items-center justify-center gap-2 px-4 py-2">
+                            <Bookmark size={16} /> <span>Bookmark</span>
+                        </Link>
                     </li>
-
                     <li className="clickable">
-                        <a
+                        <Link to="/about"
                             href="#"
                             className="inline-block px-4 py-2 bg-light text-primary font-medium rounded-full text-nowrap"
                         >
                             Tentang Kami
-                        </a>
+                        </Link>
                     </li>
                 </ul>
+
             </div>
         </nav>
     );
