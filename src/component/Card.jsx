@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Card({ title, author, img, lazy, bookId }) {
+export default function Card({ title, author, img, lazy, bookId, }) {
     // Gunakan proxy images.weserv.nl agar gambar bisa tampil
     const proxyImage = img
         ? `https://images.weserv.nl/?url=${encodeURIComponent(
-            img.replace("http://", "https://")
+            img
+                .replace("http://", "https://")
+                .replace("zoom=1", "zoom=2")
         )}`
         : "https://placehold.co/300x450?text=No+Image";
 
@@ -24,7 +26,7 @@ export default function Card({ title, author, img, lazy, bookId }) {
             <h4 className="text-md md:text-2xl max-w-[128px] md:max-w-none mt-3 font-medium text-black line-clamp-2">
                 {title || "Tidak Ada Judul"}
             </h4>
-            <p className="text-gray-500 text-xs md:text-[1rem]">{author || "Tidak Ada Penulis"}</p>
+            <p className="text-gray-500 line-clamp-2 text-xs md:text-[1rem]">{author || "Tidak Ada Penulis"}</p>
         </div>
     );
 }

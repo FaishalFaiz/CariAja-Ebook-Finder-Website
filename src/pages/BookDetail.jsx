@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Bookmark } from "lucide-react";
 import DOMPurify from "dompurify";
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export default function BookDetail() {
     const { id } = useParams(); // Ambil ID dari URL
@@ -31,13 +32,15 @@ export default function BookDetail() {
         localStorage.setItem("bookmarks", JSON.stringify(updated));
     };
 
-    // 🔹 Ambil data buku berdasarkan ID
+    // Ambil data buku berdasarkan ID
     useEffect(() => {
         window.scrollTo(0, 0);
 
         async function fetchBook() {
             try {
-                const res = await fetch(`https://www.googleapis.com/books/v1/volumes/${id}`);
+                const res = await fetch(
+                    `https://www.googleapis.com/books/v1/volumes/${id}?bookId=${API_KEY}`
+                );
                 const data = await res.json();
                 setBook(data);
             } catch (error) {
@@ -47,10 +50,11 @@ export default function BookDetail() {
             }
         }
 
+
         fetchBook();
     }, [id]);
 
-    // 🔹 Skeleton loading
+    // 🔹Skeleton loading
     if (loading)
         return (
             <main className="w-4/5 md:w-6/10 mx-auto mt-[5vh] md:mt-[10vh] animate-pulse">
@@ -98,9 +102,9 @@ export default function BookDetail() {
                     </div>
                 </div>
 
-                {/* Shimmer keyframes */}
+                {/* Shimmer bookIdframes */}
                 <style>{`
-                    @keyframes shimmer {
+                    @bookIdframes shimmer {
                         0% { background-position: -500px 0; }
                         100% { background-position: 500px 0; }
                     }

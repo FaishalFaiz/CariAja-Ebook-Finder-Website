@@ -13,7 +13,7 @@ export default function Footer() {
                     className="w-[clamp(120px,22vw,150px)]"
                     onClick={() => (window.location.href = "/")} // klik logo balik ke homepage
                 />
-                <div class="flex flex-col md:flex-row gap-3 mt-2 justify-center">
+                <div className="flex flex-col md:flex-row gap-3 mt-2 justify-center">
                     <Link to="/about" className="hover:underline">Tentang Kami</Link>
                     <Link to="/library" className="hover:underline">Library</Link>
                     <Link to="/bookmark" className="hover:underline">Bookmark</Link>

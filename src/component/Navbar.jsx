@@ -1,10 +1,25 @@
 import React, { useState } from "react";
 import logo from "@/assets/logo.svg";
 import { Menu, X, Bookmark, Search } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [query, setQuery] = useState(""); // ← simpan teks pencarian
+    const navigate = useNavigate();
+
+    // 🔹 Fungsi saat tombol Enter ditekan
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+            if (query.trim() !== "") {
+                navigate(`/library?search=${encodeURIComponent(query)}`);
+            } else {
+                navigate("/library");
+            }
+        }
+    };
 
     return (
         <nav className="z-50 flex items-center justify-center px-6 py-6 md:py-10 bg-dark text-white sticky top-0">
@@ -25,6 +40,9 @@ export default function Navbar() {
                     <input
                         type="text"
                         placeholder="Cari Judul Buku, Penulis"
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)} // update teks
+                        onKeyDown={handleKeyDown} // deteksi Enter
                         className="flex-1 px-3 py-2 text-gray-700 focus:outline-none placeholder:text-sm md:placeholder:text-base"
                     />
                 </div>
@@ -40,11 +58,12 @@ export default function Navbar() {
 
                 {/* Menu */}
                 <ul
-                    className={`absolute left-0 top-[85px] py-3 lg:py-0 w-full bg-dark text-center lg:static lg:flex lg:w-auto lg:space-x-6 transition-all duration-300 ${isOpen ? "block" : "hidden lg:block"
-                        }`}
+                    className={`absolute left-0 top-[85px] py-3 lg:py-0 w-full bg-dark text-center lg:static lg:flex lg:w-auto lg:space-x-6 transition-all duration-300 ${
+                        isOpen ? "block" : "hidden lg:block"
+                    }`}
                 >
                     <li className="clickable">
-                        <Link to="/library" href="#" className="block px-4 py-2">Library</Link>
+                        <Link to="/library" className="block px-4 py-2">Library</Link>
                     </li>
                     <li className="clickable">
                         <Link to="/bookmark" className="flex items-center justify-center gap-2 px-4 py-2">
@@ -52,8 +71,8 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li className="clickable">
-                        <Link to="/about"
-                            href="#"
+                        <Link
+                            to="/about"
                             className="inline-block px-4 py-2 bg-light text-primary font-medium rounded-full text-nowrap"
                         >
                             Tentang Kami

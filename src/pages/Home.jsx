@@ -47,6 +47,7 @@ export default function Home() {
                     <div className="flex flex-wrap justify-between w-full gap-7 ">
                         {booksData.novel_fiksi.map((book) => (
                             <Card
+                                key={book.id} // key untuk React
                                 bookId={book.id}
                                 title={book.title}
                                 author={book.authors[0]}
@@ -65,7 +66,7 @@ export default function Home() {
                             <img src={Bumi} className="max-w-[150px] shadow-lg rounded-lg" />
                         </div>
 
-                        <div class="w-full md:w-2/3 flex flex-col gap-1 justify-center items-start px-5 md:px-10 my-5">
+                        <div className="w-full md:w-2/3 flex flex-col gap-1 justify-center items-start px-5 md:px-10 my-5">
                             <h4 className="text-lg md:text-2xl font-bold text-black">Seri "Dunia Paralel" <span className="italic font-medium">- Tere Liye</span></h4>
                             <p className="text-lg text-gray-500">17 Buku</p>
 
@@ -85,6 +86,7 @@ export default function Home() {
                     <div className="flex flex-wrap justify-between w-full gap-7 ">
                         {booksData.bisnis_ekonomi.map((book) => (
                             <Card
+                                key={book.id} // key untuk React
                                 bookId={book.id}
                                 title={book.title}
                                 author={book.authors[0]}
@@ -103,7 +105,7 @@ export default function Home() {
                             <img src={Bisnis} className="max-w-[150px] shadow-lg rounded-lg" />
                         </div>
 
-                        <div class="w-full md:w-2/3 flex flex-col gap-1 justify-center items-start px-5 md:px-10 my-5">
+                        <div className="w-full md:w-2/3 flex flex-col gap-1 justify-center items-start px-5 md:px-10 my-5">
                             <h4 className="text-lg md:text-2xl font-bold text-black">Seri "The Rich Dad's" <span className="italic font-medium">- Robert T Kiyosaki</span></h4>
                             <p className="text-lg text-gray-500">7 Buku</p>
 
@@ -123,6 +125,7 @@ export default function Home() {
                     <div className="flex flex-wrap justify-between w-full gap-7 ">
                         {booksData.pengembangan_diri.map((book) => (
                             <Card
+                                key={book.id} // key untuk React
                                 bookId={book.id}
                                 title={book.title}
                                 author={book.authors[0]}
