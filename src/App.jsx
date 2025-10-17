@@ -12,7 +12,6 @@
   import Home from "@/pages/Home";
   import Bookmark from "@/pages/Bookmark";
   import Library from "@/pages/Library";
-  import AppAPI from "@/pages/Api"; // pages ini buat template API
 
   function App() {
     return (
@@ -29,7 +28,6 @@
               <Route path="/library" element={<Library />} />
               <Route path="/bookmark" element={<Bookmark />} />
               <Route path="/bookdetail/:id" element={<BookDetail />} />
-              <Route path="/api" element={<AppAPI />} />
             </Routes>
           </div>
 

@@ -5,8 +5,15 @@ import CropEffect from "@/assets/cropeffect.webp";
 import Bumi from "@/assets/novel1.webp";
 import Bisnis from "@/assets/bisnis1.webp";
 import { BookOpen } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+    const navigate = useNavigate();
+
+    const categoryChange = (query) => {
+        navigate(`/library?search=${encodeURIComponent(query)}`);
+    }
+
     return (
         <>
             <header className="relative text-white w-full px-5 h-fit pt-[12vh] pb-[20vh] bg-gradient-to-b from-dark to-primary flex flex-col justify-center items-center">
@@ -26,13 +33,13 @@ export default function Home() {
                 <section className="flex flex-col w-full items-center justify-center">
                     <h3 className="text-center section-title">Kategori Populer</h3>
                     <ul className="w-full flex flex-wrap p-0 items-center justify-center gap-5 mt-5">
-                        <li className="category-card"><a href="">Novel & Fiksi</a></li>
-                        <li className="category-card"><a href="">Pendidikan</a></li>
-                        <li className="category-card"><a href="">Sains</a></li>
-                        <li className="category-card"><a href="">Bisnis & Ekonomi</a></li>
-                        <li className="category-card"><a href="">Bahasa & Sastra</a></li>
-                        <li className="category-card"><a href="">Pengembangan Diri (Self-Help)</a></li>
-                        <li className="category-card"><a href="">30+</a></li>
+                        <button className="category-card" onClick={() => categoryChange("novel")} >Novel & Fiksi</button>
+                        <button className="category-card" onClick={() => categoryChange("pendidikan")}>Pendidikan</button>
+                        <button className="category-card" onClick={() => categoryChange("Sains")}>Sains</button>
+                        <button className="category-card" onClick={() => categoryChange("Bisnis")}>Bisnis & Ekonomi</button>
+                        <button className="category-card" onClick={() => categoryChange("Sastra")}>Bahasa & Sastra</button>
+                        <button className="category-card" onClick={() => categoryChange("Self-improvement")}>Pengembangan Diri (Self-Help)</button>
+                        <button className="category-card" onClick={() => categoryChange("Pentingnya Membaca")}>30+</button>
                     </ul>
                 </section>
 
@@ -41,7 +48,7 @@ export default function Home() {
                     {/* Header judul dan link */}
                     <div className="flex w-full justify-between items-center mb-5">
                         <h3 className="section-title">Novel &amp; Fiksi <span className="font-medium">-&gt;</span></h3>
-                        <a className="section-sub">Lihat Semua</a>
+                        <a onClick={() => categoryChange("Teralogi Buru")} className="section-sub">Lihat Semua</a>
                     </div>
                     {/* Daftar card */}
                     <div className="flex flex-wrap justify-between w-full gap-7 ">
@@ -80,7 +87,7 @@ export default function Home() {
                     {/* Header judul dan link */}
                     <div className="flex w-full justify-between items-center mb-5">
                         <h3 className="section-title">Bisnis &amp; Ekonomi<span className="font-medium">-&gt;</span></h3>
-                        <a className="section-sub">Lihat Semua</a>
+                        <a onClick={() => categoryChange("Rich Dad Poor Dad")} className="section-sub">Lihat Semua</a>
                     </div>
                     {/* Daftar card */}
                     <div className="flex flex-wrap justify-between w-full gap-7 ">
@@ -119,7 +126,7 @@ export default function Home() {
                     {/* Header judul dan link */}
                     <div className="flex w-full justify-between items-center mb-5">
                         <h3 className="section-title">Pengembangan Diri<span className="font-medium">-&gt;</span></h3>
-                        <a className="section-sub">Lihat Semua</a>
+                        <a onClick={() => categoryChange("Atomic Habit")} className="section-sub">Lihat Semua</a>
                     </div>
                     {/* Daftar card */}
                     <div className="flex flex-wrap justify-between w-full gap-7 ">
@@ -149,7 +156,7 @@ export default function Home() {
                         />
                         <h2 className="font-polyb text-primary text-xl md:text-3xl">Ayo Mulai Membaca!</h2>
                         <p className="text-sm md:text-lg">Udah gak ada alasan lagi buat kamu untuk malas mencari dan membaca buku, karena hanya dengan beberapa klik semua bisa teratasi oleh CariAJa.</p>
-                        <a className="bg-primary text-white px-6 clickable py-3 rounded-lg">Cari Buku</a>
+                        <button className="bg-primary text-white px-6 clickable py-3 rounded-lg" onClick={() => categoryChange("")}>Cari Buku</button>
                     </div>
                     <hr className="w-full border-t-2 border-gray-200" />
 

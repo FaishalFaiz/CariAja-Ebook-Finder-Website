@@ -70,8 +70,8 @@ export default function Library() {
                     {loading && books.length === 0
                         ? "Sedang mencari..."
                         : query
-                        ? `${books.length} hasil untuk pencarian "${query}"`
-                        : "Masukkan kata kunci pencarian"}
+                            ? `${books.length} hasil untuk pencarian "${query}"`
+                            : "Masukkan kata kunci pencarian"}
                 </p>
             </div>
 
@@ -96,18 +96,19 @@ export default function Library() {
             </div>
 
             {/* Tombol tampilkan lebih banyak */}
-            {!loading && hasMore && (
+            {query && !loading && hasMore && (
                 <button
                     onClick={handleShowMore}
-                    className="mt-8 px-6 py-3 bg-primary text-white rounded-xl hover:bg-opacity-90 transition-all"
+                    className="mt-[10vh] px-6 py-3 clickable bg-primary text-white rounded-xl hover:bg-opacity-90 transition-all"
                 >
                     Tampilkan lebih banyak
                 </button>
             )}
 
+
             {/* Pesan loading */}
             {loading && books.length > 0 && (
-                <p className="text-gray-500 mt-5">Sedang memuat data...</p>
+                <p className="text-gray-500 mt-[10vh]">Sedang memuat data...</p>
             )}
         </main>
     );
