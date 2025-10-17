@@ -15,6 +15,7 @@ export default function Navbar() {
         if (e.key === "Enter") {
             if (query.trim() !== "") {
                 navigate(`/library?search=${encodeURIComponent(query)}`);
+                setQuery(""); // Kosongkan input setelah pencarian
             } else {
                 navigate("/library");
             }
