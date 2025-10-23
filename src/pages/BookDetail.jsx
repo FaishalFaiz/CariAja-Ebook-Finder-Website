@@ -39,8 +39,12 @@ export default function BookDetail() {
         async function fetchBook() {
             try {
                 const res = await fetch(
-                    `https://www.googleapis.com/books/v1/volumes/${id}?bookId=${API_KEY}`
+                    `https://www.googleapis.com/books/v1/volumes/${id}?key=${API_KEY}`
                 );
+                if (!res.ok) {
+                    throw new Error(`Error ${res.status}: ${res.statusText}`);
+                }
+
                 const data = await res.json();
                 setBook(data);
             } catch (error) {
