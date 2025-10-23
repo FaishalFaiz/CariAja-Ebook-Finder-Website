@@ -9,6 +9,7 @@
     import { TypingAnimation } from "@/components/ui/typing-animation";
     import { AuroraText } from "@/components/ui/aurora-text"
     import { Meteors } from "@/components/ui/meteors"
+    
 
     export default function Home() {
         const navigate = useNavigate();
@@ -60,7 +61,7 @@
                         {/* Header judul dan link */}
                         <div startOnView className="flex w-full justify-between items-center mb-5">
                             <TypingAnimation className="section-title">Novel &amp; Fiksi ➡️</TypingAnimation>
-                            <a onClick={() => categoryChange("Teralogi Buru")} className="section-sub">Lihat Semua</a>
+                            <a onClick={() => categoryChange("Tetralogi Buru")} className="section-sub">Lihat Semua</a>
                         </div>
                         {/* Daftar card */}
                         <div className="flex flex-wrap justify-between w-full gap-7 ">
@@ -82,7 +83,7 @@
                         <TypingAnimation startOnView className="section-title mb-5">Seri Novel Best Seller ➡️</TypingAnimation>
                         <div className="bg-[#FFFFFF] flex flex-col clickable md:flex-row border-[1px] border-gray-300 overflow-hidden shadow-lg rounded-xl">
                             <div className="bg-secondary w-full md:w-1/3 flex flex-col justify-center items-center px-5 py-5">
-                                <img src={Bumi} className="max-w-[150px] shadow-lg rounded-lg" />
+                                <img src={Bumi} alt="Gambar Seri Novel Best Seller" className="max-w-[150px] shadow-lg rounded-lg" />
                             </div>
 
                             <div className="w-full md:w-2/3 flex flex-col gap-1 justify-center items-start px-5 md:px-10 my-5">
@@ -121,7 +122,7 @@
                         <TypingAnimation startOnView className="section-title mb-5">Seri Bisnis &amp; Ekonomi ➡️</TypingAnimation>
                         <div className="bg-[#FFFFFF] flex flex-col clickable md:flex-row border-[1px] border-gray-300 overflow-hidden shadow-lg rounded-xl">
                             <div className="bg-secondary w-full md:w-1/3 flex flex-col justify-center items-center px-5 py-5">
-                                <img src={Bisnis} className="max-w-[150px] shadow-lg rounded-lg" />
+                                <img src={Bisnis} alt="Gambar Seri Buku Bisnis & Ekonomi" className="max-w-[150px] shadow-lg rounded-lg" />
                             </div>
 
                             <div className="w-full md:w-2/3 flex flex-col gap-1 justify-center items-start px-5 md:px-10 my-5">
