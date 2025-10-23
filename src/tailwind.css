@@ -104,14 +104,19 @@
         }
     }
 
-    --animate-rippling: rippling var(--duration) ease-out
-;
-  @keyframes rippling {
-  0% {
-    opacity: 1;}
-  100% {
-    transform: scale(2);
-    opacity: 0;}}}
+    --animate-rippling: rippling var(--duration) ease-out;
+
+    @keyframes rippling {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+}
 
 /* ---break---  */
 
@@ -202,18 +207,15 @@
 
 @font-face {
     font-family: 'Poly Bulky';
-    src: url('./assets/fonts/polysanstrial-bulky.otf') format('opentype');
+    src: url('@/assets/fonts/polysanstrial-bulky.otf') format('opentype');
 }
 
 @font-face {
     font-family: 'Poly Wide';
-    src: url('./assets/fonts/polysanstrial-medianwide.otf') format('opentype');
+    src: url('@/assets/fonts/polysanstrial-medianwide.otf') format('opentype');
 }
 
-@font-face {
-    font-family: 'Poly Italic';
-    src: url('./assets/fonts/polysansitalictrial-slimititalic.otf') format('opentype');
-}
+
 
 @theme {
     --color-dark: #000957;
@@ -223,7 +225,7 @@
     --color-white: #FBFBFB;
     --font-polyb: 'Poly Bulky', sans-serif;
     --font-polyw: 'Poly Wide', sans-serif;
-    --font-polyi: 'Poly Italic', sans-serif;
+    --font-inter: 'Inter', sans-serif;
 }
 
 @layer base {

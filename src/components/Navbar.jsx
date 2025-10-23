@@ -3,8 +3,6 @@ import logo from "@/assets/logo.svg";
 import { Menu, X, Bookmark, Search } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
-
-
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [query, setQuery] = useState(""); // ← simpan teks pencarian
@@ -59,7 +57,7 @@ export default function Navbar() {
 
                 {/* Menu */}
                 <ul
-                    className={`absolute left-0 top-[85px] py-3 lg:py-0 w-full bg-dark text-center lg:static lg:flex lg:w-auto lg:space-x-6 transition-all duration-300 ${
+                    className={`absolute flex flex-col gap-5 md:gap-0 md:flex-row left-0 top-[85px] pt-3 pb-6 lg:py-0 w-full bg-dark text-center lg:static lg:flex lg:w-auto lg:space-x-6 transition-all duration-300 ${
                         isOpen ? "block" : "hidden lg:block"
                     }`}
                 >
