@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Search } from "lucide-react";
-import Card from "@/component/Card";
+import Card from "@/components/Card";
 
 export default function Library() {
     const location = useLocation();

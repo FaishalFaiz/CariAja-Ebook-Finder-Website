@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Card from "@/component/Card"; // komponen tampilan buku
+import Card from "@/components/Card"; // komponen tampilan buku
 import { useNavigate } from "react-router-dom";
 
 export default function Bookmark() {

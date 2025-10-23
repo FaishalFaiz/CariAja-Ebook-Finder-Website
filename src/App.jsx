@@ -4,14 +4,15 @@
 
   import "@/tailwind.css";
   // component
-  import Navbar from "@/component/Navbar";
-  import Footer from "@/component/Footer";
+  import Navbar from "@/components/Navbar";
+  import Footer from "@/components/Footer";
   // pages
   import About from "@/pages/About";
   import BookDetail from "@/pages/BookDetail";
   import Home from "@/pages/Home";
   import Bookmark from "@/pages/Bookmark";
   import Library from "@/pages/Library";
+
 
   function App() {
     return (
