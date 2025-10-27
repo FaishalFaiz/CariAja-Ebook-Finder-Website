@@ -1,8 +1,9 @@
+// Ini adalah halaman detail buku yang tampil setelah user klik salah satu card buku. Page ini menampilkan informasi lengkap tentang buku yang dipilih dari Google Books API
+
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Bookmark } from "lucide-react";
 import DOMPurify from "dompurify";
-const API_KEY = import.meta.env.VITE_API_KEY;
 
 export default function BookDetail() {
     const { id } = useParams(); // Ambil ID dari URL
@@ -38,6 +39,7 @@ export default function BookDetail() {
 
         async function fetchBook() {
             try {
+                const API_KEY = import.meta.env.VITE_API_KEY;
                 const res = await fetch(
                     `https://www.googleapis.com/books/v1/volumes/${id}?key=${API_KEY}`
                 );

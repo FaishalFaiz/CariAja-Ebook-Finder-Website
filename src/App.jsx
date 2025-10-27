@@ -1,7 +1,7 @@
+  // Ini adalah komponen utama website saya, disini saya mengatur routing dan tata letak umum seperti Navbar dan Footer.
+
   import React from "react";
   import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-
   import "@/tailwind.css";
   // component
   import Navbar from "@/components/Navbar";

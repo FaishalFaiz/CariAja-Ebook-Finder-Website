@@ -1,3 +1,5 @@
+// Ini adalah halaman About yang berisi tentang informasi dasar tentang website ini. Dan informasi tentang pembuatnya
+
 import React from "react";
 import AboutImage from "@/assets/about.webp";
 import profile from "@/assets/profile.webp";

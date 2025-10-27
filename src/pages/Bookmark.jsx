@@ -1,3 +1,5 @@
+// Ini adalah page Bookmark yang menyimpan buku yang user simpan di localStorage
+
 import React, { useEffect, useState } from "react";
 import Card from "@/components/Card"; // komponen tampilan buku
 import { useNavigate } from "react-router-dom";
@@ -24,9 +26,9 @@ export default function Bookmark() {
 
             try {
                 // Fetch data untuk setiap ID buku
-                const apiKey = import.meta.env.VITE_API_KEY;
+                const API_KEY = import.meta.env.VITE_API_KEY;
                 const fetches = bookmarkIds.map((id) =>
-                    fetch(`https://www.googleapis.com/books/v1/volumes/${id}?key=${apiKey}`)
+                    fetch(`https://www.googleapis.com/books/v1/volumes/${id}?key=${API_KEY}`)
                         .then((res) => res.json())
                 );
 

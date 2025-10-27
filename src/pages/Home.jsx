@@ -1,3 +1,5 @@
+// ini adalah home page dari website saya, halaman yang pertama kali diakses user, disini anda bisa menemukan rekomendasi buku, kategori populer, dan lain-lain.
+
 import React from "react";
 import booksData from "@/data/homepage.json";
 import Card from "@/components/Card.jsx";

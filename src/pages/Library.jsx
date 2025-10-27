@@ -1,3 +1,5 @@
+// Ini adalah halamaan Library yang menampilkan hasil pencarian buku yang diambil dari Google Books API
+
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Search } from "lucide-react";
@@ -21,13 +23,13 @@ export default function Library() {
 
         setLoading(true);
         try {
-            const apikey = import.meta.env.VITE_API_KEY;
+            const API_KEY = import.meta.env.VITE_API_KEY;
             const startIndex = reset ? 0 : page * maxResults;
 
             const res = await fetch(
                 `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(
                     query
-                )}&startIndex=${startIndex}&maxResults=${maxResults}&key=${apikey}`
+                )}&startIndex=${startIndex}&maxResults=${maxResults}&key=${API_KEY}`
             );
 
             const data = await res.json();
