@@ -1,4 +1,6 @@
 # 📚 CariAja : Instant E-Books Finder
+🥇 1st Winning Project at Designova Web Design Competition 2025
+
 
 **Link Kilat ➡**  
 [🌐 Website](https://cariaja-faishal.vercel.app/) | [💻 GitHub](https://github.com/FaishalFaiz/CariAja-Ebook-Finder-Website) | [🎨 Figma Prototype](https://www.figma.com/proto/VGVqjw1ZMthjYcFj2bm9xF/CariAja---DesignNova-2025?page-id=1%3A3&node-id=9-79&starting-point-node-id=9%3A79&scaling=min-zoom&content-scaling=fixed&t=LIPXCXIZIqOSanQ8-1)
